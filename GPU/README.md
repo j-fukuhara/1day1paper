@@ -1,3 +1,19 @@
+# A Symbolic Emulator for Shuffle Synthesis on the NVIDIA PTX Code
+  * K. Matsumura et al.
+  * [ACM Compiler Construction 2023 (CC 2023)](https://doi.org/10.1145/3578360.3580253)
+
+## Abstract
+  * **OpenACC**などのディレクティブベースのプログラミングモデルは，GPUを使った並列計算を容易にしている．
+  * しかし，そうした抽象的なモデルは，プログラマがGPUの機能を利用した低レベルな最適化を行うことを妨げる．
+  * これは，実際に生成される計算は，プログラマから隠されるからである．
+  * 本論文では，コンパイルの最後に，コードエミュレータフェーズを加える柔軟な最適化手法を提案する
+  * 提案手法は，記号解析（symbolic analysis）を使用して，生成されたコードをエミュレートし，**動的な情報**を代わりに用いることで、**さらに低レベルのコード最適化**を適用できるようにする．
+  * フロントエンドとして，**CUDA**とOpenACCをサポートし，OpenAccに対しては以前は不可能だった低レベルのGPU最適化を適用することが可能になった．
+  * 熟練のGPUプログラマにとっても使うのが難しいwarpレベルのシャッフル命令を自動化することで，提案ツールの能力を示す．
+  * ベンチマークと複雑なアプリケーションコードで提案ツールを評価し，4世代のGPUアーキテクチャにおけるシャッフル命令の利点を評価するための詳細な調査を示す．
+  
+---
+
 # A Compiler Framework for Optimizing Dynamic Parallelism on GPUs
   * M. G. Olabi et al.
   * [IEEE/ACM Code Generation and Optimization 2022 (CGO 2022)](https://doi.org/10.1109/CGO53902.2022.9741284)
